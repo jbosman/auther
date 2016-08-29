@@ -26,7 +26,8 @@ juke.config(function ($stateProvider) {
 
   $stateProvider.state('artist.albums', {
     url: '/albums',
-    templateUrl: '/js/artist/templates/artist-albums.html'
+    // templateUrl: '/js/artist/templates/artist-albums.html',
+    template: '<my-albums data="artist.albums"></my-albums>',
   });
 
   $stateProvider.state('artist.songs', {

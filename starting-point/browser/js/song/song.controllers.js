@@ -21,3 +21,44 @@ juke.controller('SongChooseCtrl', function ($scope, SongFactory) {
   };
 
 });
+
+juke.directive('mySongs', function(PlayerFactory){
+  console.log("got into mySongs directive");
+
+  var obj = {};
+
+  obj.restrict = 'E';
+
+  obj.templateUrl = '/js/song/templates/songs.html';
+
+  obj.scope = {
+    artists: '=',
+    songs: '='
+  };
+
+  obj.link = function(scope){
+    
+
+    angular.extend(scope, PlayerFactory);
+
+    scope.artistsSongs = scope.songs;
+    scope.songsArtists = scope.artists;
+
+    scope.toggle = function () {
+      if ( PlayerFactory.isPlaying() ) PlayerFactory.pause();
+      else PlayerFactory.resume();
+    };
+
+    scope.getPercent = function () {
+      return PlayerFactory.getProgress() * 100;
+    };
+
+    scope.handleProgressClick = function (evt) {
+      PlayerFactory.seek(evt.offsetX / evt.currentTarget.scrollWidth);
+    };
+      // console.log("scope.data: ", scope.data)
+  };
+
+  return obj;
+})
+

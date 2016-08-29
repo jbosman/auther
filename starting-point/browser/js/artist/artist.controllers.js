@@ -33,3 +33,4 @@ juke.controller('ArtistCtrl', function ($scope, PlayerFactory, theArtist) {
   };
 
 });
+

@@ -1,6 +1,6 @@
 <div>
   <h3>{{ playlist.name }}</h3>
-  <table class='table' ng-show="playlist.songs.length">
+<!--   <table class='table' ng-show="playlist.songs.length">
     <thead>
       <tr>
         <th></th>
@@ -17,11 +17,15 @@
           </button>
         </td>
         <td>{{ song.name }}</td>
-        <td><span ng-repeat="artist in song.artists">{{ artist.name }}{{ $last ? '' : ', ' }}</span></td>
+        <td>
+          <my-songs data=song.artists></my-songs>
+        </td>
         <td>{{ song.genre }}</td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
+    <my-songs songs=playlist.songs artists=song.artists></my-songs>
+
   <small ng-hide="playlist.songs.length">No songs.</small>
   <hr>
   <div ng-controller="SongChooseCtrl" class="well">

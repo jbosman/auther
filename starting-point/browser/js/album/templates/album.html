@@ -3,7 +3,7 @@
     <h3>{{ album.name }}</h3>
     <img ng-src="{{ album.imageUrl }}" class="img-thumbnail">
   </p>
-  <table class='table'>
+<!--   <table class='table'>
     <thead>
       <tr>
         <th></th>
@@ -20,9 +20,12 @@
           </button>
         </td>
         <td>{{ song.name }}</td>
-        <td><span ng-repeat="artist in song.artists">{{ artist.name }}{{ $last ? '' : ', ' }}</span></td>
+        <td></td>
         <td>{{ song.genre }}</td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
+
+  <my-songs songs=album.songs></my-songs>
+
 </div>

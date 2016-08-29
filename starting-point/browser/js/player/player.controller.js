@@ -23,7 +23,7 @@
 juke.directive('myPlayer', function(PlayerFactory){
   var obj = {};
 
-  console.log("myPlayer directive")
+  // console.log("myPlayer directive")
 
   obj.restrict = 'E';
   obj.templateUrl = '/js/player/template/player.html'
